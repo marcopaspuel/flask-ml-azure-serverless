@@ -47,6 +47,14 @@ stages:
       workingDirectory: $(projectRoot)
       displayName: "Install requirements"
 
+    - script: |
+        python -m venv antenv
+        source antenv/bin/activate
+        make install
+        make lint
+      workingDirectory: $(projectRoot)
+      displayName: "Run lint tests"
+
     - task: ArchiveFiles@2
       displayName: 'Archive files'
       inputs:
