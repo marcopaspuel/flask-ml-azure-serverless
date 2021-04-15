@@ -83,7 +83,19 @@ First open a new Azure Cloud Shell then run the commands bellow.
 ```
 The model should predict the output depicted bellow.
 
-![pycharm4](prediction-output.png)
+![pycharm5](prediction-output.png)
+
+#### 6. Verify Continuous Integration by changing app.py
+To verify that the Continuous Integration is working you can open the editor in Azure Cloud Shell and change the welcome
+message in the app.py script (line 25).
+
+![pycharm6](change-welcome-message.png)
+
+Then commit and push your changes. Now you can you open your GitHub repo and go to the Actions section you will see that 
+a new pipeline has been triggered that will test your changes and make sure that the code is in a deployable state. See image bellow.
+
+![pycharm7](github-actions.png)
+
 
 
 
