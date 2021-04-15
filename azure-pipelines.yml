@@ -1,6 +1,5 @@
 # Python to Linux Web App on Azure
-# Build your Python project and deploy it to Azure as a Linux Web App.
-# Change python version to one thats appropriate for your application.
+# Builds the Python project and deploys it to Azure as a Linux Web App.
 # https://docs.microsoft.com/azure/devops/pipelines/languages/python
 
 trigger:
