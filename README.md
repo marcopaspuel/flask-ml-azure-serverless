@@ -52,6 +52,17 @@ you would need to log into your Azure Account from the terminal first.
 ```
 ![pycharm1](git-clone-output.png)
 
+#### 2. Create virtual environment and source
+``` bash 
+    make setup
+    source ~/.flask-ml-azure-serverless/bin/activate
+```
+#### 3. Deploy your app in Azure Cloud Shell
+``` bash 
+    make all
+    python app.py
+```
+
 <TODO:  
 * Architectural Diagram (Shows how key parts of the system work)>
 
