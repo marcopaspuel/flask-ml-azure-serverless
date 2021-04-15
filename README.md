@@ -5,8 +5,6 @@ Deploying a Flask Machine Learning Application on Azure App Services.
 
 [![Python application test with Github Actions](https://github.com/marcoBrighterAI/flask-ml-azure-serverless/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/marcoBrighterAI/flask-ml-azure-serverless/actions/workflows/main.yml)
 
-[![Build Status](https://dev.azure.com/marcopaspuel/Flask-ML-Deploy/_apis/build/status/marcoBrighterAI.flask-ml-azure-serverless?branchName=main)](https://dev.azure.com/marcopaspuel/Flask-ML-Deploy/_build/latest?definitionId=1&branchName=main)
-
 ### Introduction
 This project builds a **Continuous Integration** pipeline using **GitHub Actions**, and a **Continuous Delivery** pipeline
 using **Azure Pipelines** for a Machine Learning Application. The app is implemented in python using scikit-learn and the
@@ -16,19 +14,35 @@ necessary to implement CI/CD. The ML application is simple, however, it can be e
 
 ### Dependencies
 - [Azure Account](https://portal.azure.com) 
+- [Azure command line interface](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest) (Only if running locally)
 
+### Project Plan
+To follow DevOps best practices, in the links bellow you will find a Kanban Trello board, and a spreadsheet
+showing the project plan, deliverables and goals.
 
-# Overview
+* Trello board
+* Project plan spreadsheet
 
-<TODO: complete this with an overview of your project>
+### Getting Started
 
-## Project Plan
-<TODO: Project Plan
+1. Fork this repository
+2. Log into the [Azure Portal](https://portal.azure.com) 
+3. Launch Azure Cloud Shell 
 
-* A link to a Trello board for the project
-* A link to a spreadsheet that includes the original and final project plan>
+### Instructions
+To run this project in the Azure Cloud Shell, follow the steps bellow. The same steps apply when running locally, however,
+you would need to log into your Azure Account from the terminal first.
 
-## Instructions
+1. Clone the forked repo in Azure Cloud Shell
+2. Create virtual environment and source
+3. Deploy your app in Azure Cloud Shell
+5. Verify Machine Learning predictions works
+6. Verify Continuous Integration by changing app.py
+7. Create a Webapp in Azure App Services
+8. Create an Azure DevOps Project and connect to Azure
+9. Create a Python Pipeline with GitHub Integration
+10. Verify Continuous Delivery by changing app.py
+
 
 <TODO:  
 * Architectural Diagram (Shows how key parts of the system work)>
