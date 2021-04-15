@@ -1,9 +1,22 @@
 # CI/CD Pipeline for Machine Learning Project in Azure
 Deploying a Flask Machine Learning Application on Azure App Services.
 
+### Status
+
+[![Python application test with Github Actions](https://github.com/marcoBrighterAI/flask-ml-azure-serverless/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/marcoBrighterAI/flask-ml-azure-serverless/actions/workflows/main.yml)
+
+[![Build Status](https://dev.azure.com/marcopaspuel/Flask-ML-Deploy/_apis/build/status/marcoBrighterAI.flask-ml-azure-serverless?branchName=main)](https://dev.azure.com/marcopaspuel/Flask-ML-Deploy/_build/latest?definitionId=1&branchName=main)
+
 ### Introduction
-This project builds a CI pipeline using ***GitHub Actions***, and a CD pipeline using ***Azure Pipelines*** for a Machine Learning Application.
-The app is implemented in python using scikit-learn and the flask module. For running the application we use **Azure App Services**.
+This project builds a **Continuous Integration** pipeline using **GitHub Actions**, and a **Continuous Delivery** pipeline
+using **Azure Pipelines** for a Machine Learning Application. The app is implemented in python using scikit-learn and the
+flask module. **Azure App Services** is used to host the application. In this repo you will find all the code and configurations
+necessary to implement CI/CD. The ML application is simple, however, it can be easily extended.
+
+
+### Dependencies
+- [Azure Account](https://portal.azure.com) 
+
 
 # Overview
 
