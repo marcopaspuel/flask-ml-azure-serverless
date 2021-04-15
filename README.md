@@ -44,6 +44,14 @@ you would need to log into your Azure Account from the terminal first.
 10. Verify Continuous Delivery by changing app.py
 
 
+#### 1. Clone the forked repo in Azure Cloud Shell
+``` bash 
+    git clone git@github.com:marcoBrighterAI/flask-ml-azure-serverless.git
+    cd flask-ml-azure-serverless/
+    ls
+```
+![pycharm1](git-clone-output.png)
+
 <TODO:  
 * Architectural Diagram (Shows how key parts of the system work)>
 
