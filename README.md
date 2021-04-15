@@ -1,3 +1,10 @@
+# CI/CD Pipeline for Machine Learning Project in Azure
+Deploying a Flask Machine Learning Application on Azure App Services.
+
+### Introduction
+This project builds a CI pipeline using ***GitHub Actions***, and a CD pipeline using ***Azure Pipelines*** for a Machine Learning Application.
+The app is implemented in python using scikit-learn and the flask module. For running the application we use **Azure App Services**.
+
 # Overview
 
 <TODO: complete this with an overview of your project>
