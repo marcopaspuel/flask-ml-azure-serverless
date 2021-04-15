@@ -52,16 +52,40 @@ you would need to log into your Azure Account from the terminal first.
 ```
 ![pycharm1](git-clone-output.png)
 
+Note:  You make need to follow this YouTube video guide on how to [setup SSH keys and configure Azure Cloud Shell with Github](https://www.youtube.com/watch?v=3vtBAfPjQus).
+
 #### 2. Create virtual environment and source
 ``` bash 
     make setup
     source ~/.flask-ml-azure-serverless/bin/activate
 ```
-#### 3. Deploy your app in Azure Cloud Shell
+#### 3. Deploy your app in Azure Cloud 
+To start the app run the following commands:
 ``` bash 
     make all
     python app.py
 ```
+![pycharm2](make-all-output.png)
+
+After running both commands you should see an output like the screenshot bellow.
+
+![pycharm3](python-app-output.png)
+
+Now you can open the *Web preview* by clicking in the icon depicted with the red dot in the image above and set the port to `5000`.
+A new window will open, and you should see you web app running. See image bellow.
+![pycharm4](web-app-running.png)
+
+#### 5. Verify Machine Learning predictions works
+First open a new Azure Cloud Shell then run the commands bellow.
+``` bash 
+    cd flask-ml-azure-serverless/
+    ./make_predict.sh
+```
+The model should predict the output depicted bellow.
+
+![pycharm4](prediction-output.png)
+
+
 
 <TODO:  
 * Architectural Diagram (Shows how key parts of the system work)>
