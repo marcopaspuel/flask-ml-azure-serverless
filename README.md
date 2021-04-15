@@ -87,16 +87,50 @@ The model should predict the output depicted bellow.
 
 #### 6. Verify Continuous Integration by changing app.py
 To verify that the Continuous Integration is working you can open the editor in Azure Cloud Shell and change the welcome
-message in the app.py script (line 25).
+message in the app.py script (line 25). Then commit and push your changes. 
 
 ![pycharm6](change-welcome-message.png)
 
-Then commit and push your changes. Now you can you open your GitHub repo and go to the Actions section you will see that 
-a new pipeline has been triggered that will test your changes and make sure that the code is in a deployable state. See image bellow.
+Now you can you open your GitHub repo and go to the *Actions* section. You will see that a new pipeline has been triggered.
+The pipeline will test your changes and make sure that the code is in a deployable state. See image bellow.
 
 ![pycharm7](github-actions.png)
 
+#### 7. Create a Webapp in Azure App Services
+7.1. Create a Resource Group
+``` bash
+    az group create --name "RESOURCE_GROUP_NAME" --location "LOCATION" --tags udacity=udacity-project2
+```
+7.2. Set the default resource group and region for subsequent commands
+``` bash
+    az configure --defaults group="RESOURCE_GROUP_NAME" location="LOCATION"
+```
+7.3. Run the following command to create and deploy the App Service app. Replace <your_app_name> 
+with a unique name that becomes the URL, http://<your_app_name>.azurewebsites.net.
+``` bash
+    az webapp up --name <your_app_name> --logs --launch-browser
+```
+For additional information of how to create an App service click on the links bellow:
+- [Create App Service with Azure CLI](https://docs.microsoft.com/en-us/azure/developer/javascript/tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-03) 
+- [Create App Service from the Azure Portal](https://medium.com/@nasreddine.skandrani/deploy-from-visual-studio-code-to-azure-bb5a25059339)
 
+#### 8. Create an Azure DevOps Project and connect to Azure
+Since the documentation for the Azure Console and Azure Pipelines is subject to change, it is recommended to follow the
+official documentation on how to [Create an Azure DevOps project and connect to Azure](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops#create-an-azure-devops-project-and-connect-to-azure)
+However, you can also watch this Walkthrough video of this process.
+
+#### 9. Create a Python Pipeline with GitHub Integration
+***Important:*** This project contains an azure-pipelines.yml already configure, therefore, we will rename it and use it as reference
+to configure the new pipeline.
+``` bash
+    mv azure-pipelines.yml azure-pipelines-old.yml
+```
+Here is the link to the official documentation on how to [Create a Python-specific pipeline to deploy to App Service](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops#create-a-python-specific-pipeline-to-deploy-to-app-service).
+You can also watch this Walkthrough video of this process.
+
+For more information on the content of the YAML file you can follow this link: [YAML pipeline explained](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops#yaml-pipeline-explained)
+
+#### 10. Verify Continuous Delivery by changing app.py
 
 
 <TODO:  
