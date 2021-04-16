@@ -15,6 +15,7 @@ necessary to implement CI/CD. The ML application is simple, however, it can be e
 ### Dependencies
 - [Azure Account](https://portal.azure.com) 
 - [Azure command line interface](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest) (Only if running locally)
+- [Azure DevOps Account](https://dev.azure.com/) 
 
 ### Project Plan
 To follow DevOps best practices, in the links bellow you will find a Kanban Trello board, and a spreadsheet
@@ -97,7 +98,7 @@ The pipeline will test your changes and make sure that the code is in a deployab
 ![pycharm7](github-actions.png)
 
 #### 7. Create a Webapp in Azure App Services
-7.1. Create a Resource Group
+###### 7.1. Create a Resource Group
 ``` bash
     az group create --name "RESOURCE_GROUP_NAME" --location "LOCATION" --tags udacity=udacity-project2
 ```
@@ -115,22 +116,51 @@ For additional information of how to create an App service click on the links be
 - [Create App Service from the Azure Portal](https://medium.com/@nasreddine.skandrani/deploy-from-visual-studio-code-to-azure-bb5a25059339)
 
 #### 8. Create an Azure DevOps Project and connect to Azure
-Since the documentation for the Azure Console and Azure Pipelines is subject to change, it is recommended to follow the
-official documentation on how to [Create an Azure DevOps project and connect to Azure](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops#create-an-azure-devops-project-and-connect-to-azure)
-However, you can also watch this Walkthrough video of this process.
+The screenshots below show the steps, but if you need to, you can also refer to [the official documentation for more detail](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops#create-an-azure-devops-project-and-connect-to-azure).
+
+8.1. In a browser, go to [dev.azure.com](https://dev.azure.com/). Once you sign in, the browser will display your Azure DevOps
+dashboard.
+
+8.2. Create a new project and name it
+
+![pycharm8](8-1-create-new-project.png)
+
+8.3 Set up a new service connection via Azure Resource Manager and Pipeline
+
+![pycharm9](8-3-new-service-connection.png)
+
+![pycharm10](8-3-2-new-service-connection.png)
 
 #### 9. Create a Python Pipeline with GitHub Integration
 ***Important:*** This project contains an azure-pipelines.yml already configure, therefore, we will rename it and use it as reference
 to configure the new pipeline.
+
+9.1. To rename the file run the command bellow from the project directory.
 ``` bash
     mv azure-pipelines.yml azure-pipelines-old.yml
 ```
-Here is the link to the official documentation on how to [Create a Python-specific pipeline to deploy to App Service](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops#create-a-python-specific-pipeline-to-deploy-to-app-service).
-You can also watch this Walkthrough video of this process.
 
-For more information on the content of the YAML file you can follow this link: [YAML pipeline explained](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops#yaml-pipeline-explained)
+9.2. Select Pipelines, create a new one and add GitHub Integration
+
+![pycharm11](8-4-pipeline-integration.png)
+
+9.3. Configure Python to Linux Web App Azure
+
+![pycharm12](8-5-configure-python-app.png)
+
+This process will create a new YAML file that looks roughly like the azure-pipelines.yml provided with this project.
+
+9.4. Modify the azure-pipelines.yml file based on the file provided with this project. 
+
+If you need to, you can also refer to [the official documentation for more detail](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops#create-a-python-specific-pipeline-to-deploy-to-app-service).
+Refer to the official [Azure Pipeline YAML documentation for more information about it](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops#yaml-pipeline-explained).
 
 #### 10. Verify Continuous Delivery by changing app.py
+To verify that the Continuous Delivery is working you can open the editor in Azure Cloud Shell and change the welcome
+message again in the app.py script (line 25).
+
+Note: You will need to pull the changes first before committing and pushing. See image bellow.
+
 
 
 <TODO:  
