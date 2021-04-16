@@ -135,7 +135,7 @@ dashboard.
 ***Important:*** This project contains an azure-pipelines.yml already configure, therefore, we will rename it and use it as reference
 to configure the new pipeline.
 
-9.1. To rename the file run the command bellow from the project directory.
+9.1. To rename the file run the command bellow in the project directory.
 ``` bash
     mv azure-pipelines.yml azure-pipelines-old.yml
 ```
@@ -152,8 +152,9 @@ This process will create a new YAML file that looks roughly like the azure-pipel
 
 9.4. Modify the azure-pipelines.yml file based on the file provided with this project. 
 
-If you need to, you can also refer to [the official documentation for more detail](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops#create-a-python-specific-pipeline-to-deploy-to-app-service).
-Refer to the official [Azure Pipeline YAML documentation for more information about it](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops#yaml-pipeline-explained).
+If you need to, you can also refer to [the official documentation](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops#create-a-python-specific-pipeline-to-deploy-to-app-service),
+and to the official [Azure Pipeline YAML documentation](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops#yaml-pipeline-explained) 
+for more information about it.
 
 #### 10. Verify Continuous Delivery by changing app.py
 To verify that the Continuous Delivery is working you can open the editor in Azure Cloud Shell and change the welcome
@@ -161,7 +162,32 @@ message again in the app.py script (line 25).
 
 Note: You will need to pull the changes first before committing and pushing. See image bellow.
 
+![pycharm13](10-1-change-welcome-message.png)
 
+After pushing the changes you can go back to [dev.azure.com](https://dev.azure.com/). Select your project, and then select
+*Pipelines*. You will see that a new deployment has been triggered. 
+
+![pycharm14](10-2-trigger-new-pipeline.png)
+
+Once the deployment is done you can open the URL http://<your_app_name>.azurewebsites.net to see the changes. 
+
+![pycharm15](10-3-website-screenshot.png)
+
+Now we can use this URL to run predictions. To do so, you can open the make_predict_azure_app.sh bash script and replace 
+line 28 to match your app URL. Then run the following command.
+``` bash 
+    ./make_predict_azure_app.sh
+```
+See image bellow and verity you get the same output.
+
+![pycharm16](10-4-model-output.png)
+
+You can stream the logs from your running application with the following command.
+``` bash 
+    az webapp log tail --name <your_app_name> -g "RESOURCE_GROUP_NAME"
+```
+
+![pycharm17](10-5-output-logs.png)
 
 <TODO:  
 * Architectural Diagram (Shows how key parts of the system work)>
