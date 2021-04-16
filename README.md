@@ -11,6 +11,8 @@ using **Azure Pipelines** for a Machine Learning Application. The app is impleme
 flask module. **Azure App Services** is used to host the application. In this repo you will find all the code and configurations
 necessary to implement CI/CD. The ML application is simple, however, it can be easily extended.
 
+<TODO:  
+* Architectural Diagram (Shows how key parts of the system work)>
 
 ### Dependencies
 - [Azure Account](https://portal.azure.com) 
@@ -102,11 +104,11 @@ The pipeline will test your changes and make sure that the code is in a deployab
 ``` bash
     az group create --name "RESOURCE_GROUP_NAME" --location "LOCATION" --tags udacity=udacity-project2
 ```
-7.2. Set the default resource group and region for subsequent commands
+###### 7.2. Set the default resource group and region for subsequent commands
 ``` bash
     az configure --defaults group="RESOURCE_GROUP_NAME" location="LOCATION"
 ```
-7.3. Run the following command to create and deploy the App Service app. Replace <your_app_name> 
+###### 7.3. Run the following command to create and deploy the App Service app. Replace <your_app_name> 
 with a unique name that becomes the URL, http://<your_app_name>.azurewebsites.net.
 ``` bash
     az webapp up --name <your_app_name> --logs --launch-browser
@@ -118,14 +120,14 @@ For additional information of how to create an App service click on the links be
 #### 8. Create an Azure DevOps Project and connect to Azure
 The screenshots below show the steps, but if you need to, you can also refer to [the official documentation for more detail](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops#create-an-azure-devops-project-and-connect-to-azure).
 
-8.1. In a browser, go to [dev.azure.com](https://dev.azure.com/). Once you sign in, the browser will display your Azure DevOps
+###### 8.1. In a browser, go to [dev.azure.com](https://dev.azure.com/). Once you sign in, the browser will display your Azure DevOps
 dashboard.
 
-8.2. Create a new project and name it
+###### 8.2. Create a new project and name it
 
 ![pycharm8](8-1-create-new-project.png)
 
-8.3 Set up a new service connection via Azure Resource Manager and Pipeline
+###### 8.3 Set up a new service connection via Azure Resource Manager and Pipeline
 
 ![pycharm9](8-3-new-service-connection.png)
 
@@ -135,22 +137,22 @@ dashboard.
 ***Important:*** This project contains an azure-pipelines.yml already configure, therefore, we will rename it and use it as reference
 to configure the new pipeline.
 
-9.1. To rename the file run the command bellow in the project directory.
+###### 9.1. To rename the file run the command bellow in the project directory.
 ``` bash
     mv azure-pipelines.yml azure-pipelines-old.yml
 ```
 
-9.2. Select Pipelines, create a new one and add GitHub Integration
+###### 9.2. Select Pipelines, create a new one and add GitHub Integration
 
 ![pycharm11](8-4-pipeline-integration.png)
 
-9.3. Configure Python to Linux Web App Azure
+###### 9.3. Configure Python to Linux Web App Azure
 
 ![pycharm12](8-5-configure-python-app.png)
 
 This process will create a new YAML file that looks roughly like the azure-pipelines.yml provided with this project.
 
-9.4. Modify the azure-pipelines.yml file based on the file provided with this project. 
+###### 9.4. Modify the azure-pipelines.yml file based on the file provided with this project. 
 
 If you need to, you can also refer to [the official documentation](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops#create-a-python-specific-pipeline-to-deploy-to-app-service),
 and to the official [Azure Pipeline YAML documentation](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops#yaml-pipeline-explained) 
@@ -189,36 +191,6 @@ You can stream the logs from your running application with the following command
 
 ![pycharm17](10-5-output-logs.png)
 
-<TODO:  
-* Architectural Diagram (Shows how key parts of the system work)>
-
-<TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
-
-* Project running on Azure App Service
-
-* Project cloned into Azure Cloud Shell
-
-* Passing tests that are displayed after running the `make all` command from the `Makefile`
-
-* Output of a test run
-
-* Successful deploy of the project in Azure Pipelines.  [Note the official documentation should be referred to and double checked as you setup CI/CD](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops).
-
-* Running Azure App Service from Azure Pipelines automatic deployment
-
-* Successful prediction from deployed flask app in Azure Cloud Shell.  [Use this file as a template for the deployed prediction](https://github.com/udacity/nd082-Azure-Cloud-DevOps-Starter-Code/blob/master/C2-AgileDevelopmentwithAzure/project/starter_files/flask-sklearn/make_predict_azure_app.sh).
-The output should look similar to this:
-
-```bash
-udacity@Azure:~$ ./make_predict_azure_app.sh
-Port: 443
-{"prediction":[20.35373177134412]}
-```
-
-* Output of streamed log files from deployed application
-
-> 
-
 ## Enhancements
 
 <TODO: A short description of how to improve the project in the future>
@@ -226,5 +198,3 @@ Port: 443
 ## Demo 
 
 <TODO: Add link Screencast on YouTube>
-
-
