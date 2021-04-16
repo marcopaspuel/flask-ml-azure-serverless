@@ -11,8 +11,7 @@ using **Azure Pipelines** for a Machine Learning Application. The app is impleme
 flask module. **Azure App Services** is used to host the application. In this repo you will find all the code and configurations
 necessary to implement CI/CD. The ML application is simple, however, it can be easily extended.
 
-<TODO:  
-* Architectural Diagram (Shows how key parts of the system work)>
+![pycharm1](project-architecture.png)
 
 ### Dependencies
 - [Azure Account](https://portal.azure.com) 
@@ -23,8 +22,8 @@ necessary to implement CI/CD. The ML application is simple, however, it can be e
 To follow DevOps best practices, in the links bellow you will find a Kanban Trello board, and a spreadsheet
 showing the project plan, deliverables and goals.
 
-* Trello board
-* Project plan spreadsheet
+* [Trello board](https://trello.com/b/boMOaYDS/ci-cd-pipeline-for-machine-learning-project-in-azure)
+* [Project plan spreadsheet](https://docs.google.com/spreadsheets/d/1YuwbRiXFODAtWOqejUCbbSH1ag5XcuXN_TyVgkzjHNE/edit?usp=sharing)
 
 ### Getting Started
 
@@ -191,10 +190,12 @@ You can stream the logs from your running application with the following command
 
 ![pycharm17](10-5-output-logs.png)
 
-## Enhancements
+### Enhancements
 
-<TODO: A short description of how to improve the project in the future>
+- Containerize the webapp in a docker image and publish the docker image to the Azure Container Registry
+- Deploy a Kubernetes version of the project on Azure Kubernetes Service (AKS) for high scalability and cost efficiency
+- Deploy a more complex Machine Learning Application. E.g. Image Recognition
 
-## Demo 
+### Demo 
 
 <TODO: Add link Screencast on YouTube>
