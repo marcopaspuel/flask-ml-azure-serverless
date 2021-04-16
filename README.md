@@ -90,7 +90,7 @@ The model should predict the output depicted bellow.
 
 #### 5. Verify Continuous Integration by changing app.py
 To verify that the Continuous Integration is working you can open the editor in Azure Cloud Shell and change the welcome
-message in the app.py script (line 25). Then commit and push your changes. 
+message in the [app.py](app.py) script (line 25). Then commit and push your changes. 
 
 ![pycharm6](images/change-welcome-message.png)
 
@@ -134,10 +134,10 @@ dashboard.
 ![pycharm10](images/8-3-2-new-service-connection.png)
 
 #### 8. Create a Python Pipeline with GitHub Integration
-***Important:*** This project contains an azure-pipelines.yml already configure, therefore, we will rename it and use it as reference
+***Important:*** This project contains an [azure-pipelines.yml](azure-pipelines.yml) already configure, therefore, we will rename it and use it as reference
 to configure the new pipeline.
 
-##### 8.1. To rename the file run the command bellow in the project directory.
+##### 8.1. To rename the YAML file run the command bellow in the project directory.
 ``` bash
     mv azure-pipelines.yml azure-pipelines-old.yml
 ```
@@ -160,7 +160,7 @@ for more information about it.
 
 #### 9. Verify Continuous Delivery by changing app.py
 To verify that the Continuous Delivery is working you can open the editor in Azure Cloud Shell and change the welcome
-message again in the app.py script (line 25).
+message again in the [app.py](app.py) script (line 25).
 
 Note: You will need to pull the changes first before committing and pushing. See image bellow.
 
