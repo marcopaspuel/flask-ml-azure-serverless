@@ -202,7 +202,7 @@ You can stream the logs from your running application with the following command
 
 ### Demo 
 
-<TODO: Add link Screencast on YouTube>
+- [Screencast on YouTube](https://www.youtube.com/watch?v=aIvl4NxCWwU)
 
 ### Helpful resources from Microsoft
 These are all excellent official documentation examples from Microsoft that explain key components of Python-based
