@@ -47,6 +47,7 @@ you would need to log into your Azure Account from the terminal first.
 8. Create a Python Pipeline with GitHub Integration
 9. Verify Continuous Delivery by changing app.py
 10. Verify Machine Learning Prediction in Azure Apps
+11. Load test the application using Locust
 
 
 #### 1. Clone the forked repo in Azure Cloud Shell
@@ -115,6 +116,9 @@ with a unique name that becomes the URL, http://<your_app_name>.azurewebsites.ne
 ``` bash
     az webapp up --name <your_app_name> --logs --launch-browser
 ```
+Alternately, you can run the [commands.sh](commands.sh) script, it will a resource group and then create and deploy the
+App service. Make sure to change the names accordingly!
+
 For additional information of how to create an App service click on the links bellow:
 - [Create App Service with Azure CLI](https://docs.microsoft.com/en-us/azure/developer/javascript/tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-03) 
 - [Create App Service from the Azure Portal](https://medium.com/@nasreddine.skandrani/deploy-from-visual-studio-code-to-azure-bb5a25059339)
@@ -193,6 +197,20 @@ You can stream the logs from your running application with the following command
 ```
 
 ![pycharm17](images/10-5-output-logs.png)
+
+
+#### 11. Load test the application using Locust
+Open a new terminal and navigate to the project's root directory. Then run the following commands to activate the 
+environment and start locus.
+``` bash 
+    source ~/.flask-ml-azure-serverless/bin/activate
+    locust --web-port 8091
+```
+Then open a *Web preview* and set the port to `8091`. Fill in the parameters and click start swarming. See images bellow.
+
+![pycharm18](images/11-1-locust-set-up.png)
+
+![pycharm19](images/11-2-locust-output.png)
 
 ### Enhancements
 
