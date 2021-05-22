@@ -22,7 +22,7 @@ necessary to implement CI/CD. The ML application is simple, however, it can be e
 
 ### Project Plan
 To follow DevOps best practices, in the links bellow you will find a Kanban Trello board, and a spreadsheet
-showing the project plan, deliverables and goals.
+showing the project plan, project deliverables and project goals.
 
 * [Trello board](https://trello.com/b/boMOaYDS/ci-cd-pipeline-for-machine-learning-project-in-azure)
 * [Project plan spreadsheet](https://docs.google.com/spreadsheets/d/1YuwbRiXFODAtWOqejUCbbSH1ag5XcuXN_TyVgkzjHNE/edit?usp=sharing)
@@ -37,17 +37,17 @@ showing the project plan, deliverables and goals.
 To run this project in the Azure Cloud Shell, follow the steps bellow. The same steps apply when running locally, however,
 you would need to log into your Azure Account from the terminal first.
 
-1. Clone the forked repo in Azure Cloud Shell
-2. Create virtual environment and source
-3. Deploy your app in Azure Cloud Shell
-4. Verify Machine Learning predictions works
-5. Verify Continuous Integration by changing app.py
-6. Create a Webapp in Azure App Services
-7. Create an Azure DevOps Project and connect to Azure
-8. Create a Python Pipeline with GitHub Integration
-9. Verify Continuous Delivery by changing app.py
-10. Verify Machine Learning Prediction in Azure Apps
-11. Load test the application using Locust
+- [1. Clone the forked repo in Azure Cloud Shell](#1-clone-the-forked-repo-in-azure-cloud-shell)
+- [2. Create virtual environment and source](#2-create-virtual-environment-and-source)
+- [3. Deploy your app in Azure Cloud](#3-deploy-your-app-in-azure-cloud)
+- [4. Verify Machine Learning predictions works](#4-verify-machine-learning-predictions-works)
+- [5. Verify Continuous Integration by changing app.py](#5-verify-continuous-integration-by-changing-apppy)
+- [6. Create a Webapp in Azure App Services](#6-create-a-webapp-in-azure-app-services)
+- [7. Create an Azure DevOps Project and connect to Azure](#7-create-an-azure-devops-project-and-connect-to-azure)
+- [8. Create a Python Pipeline with GitHub Integration](#8-create-a-python-pipeline-with-github-integration)
+- [9. Verify Continuous Delivery by changing app.py](#9-verify-continuous-delivery-by-changing-apppy)
+- [10. Verify Machine Learning Prediction in Azure Apps](#10-verify-machine-learning-prediction-in-azure-apps)
+- [11. Load test the application using Locust](#11-load-test-the-application-using-locust)
 
 
 #### 1. Clone the forked repo in Azure Cloud Shell
@@ -58,7 +58,7 @@ you would need to log into your Azure Account from the terminal first.
 ```
 ![pycharm1](images/git-clone-output.png)
 
-Note:  You make need to follow this YouTube video guide on how to [setup SSH keys and configure Azure Cloud Shell with Github](https://www.youtube.com/watch?v=3vtBAfPjQus).
+Note:  You may need to follow this YouTube video guide on how to [setup SSH keys and configure Azure Cloud Shell with Github](https://www.youtube.com/watch?v=3vtBAfPjQus).
 
 #### 2. Create virtual environment and source
 ``` bash 
@@ -214,9 +214,9 @@ Then open a *Web preview* and set the port to `8091`. Fill in the parameters and
 
 ### Enhancements
 
-- Containerize the webapp in a docker image and publish the docker image to the Azure Container Registry
-- Deploy a Kubernetes version of the project on Azure Kubernetes Service (AKS) for high scalability and cost efficiency
-- Deploy a more complex Machine Learning Application. E.g. Image Recognition
+- Containerize the webapp in a docker image and publish the docker image to the Azure Container Registry.
+- Deploy a Kubernetes version of the project on Azure Kubernetes Service (AKS) for high scalability and cost efficiency.
+- Deploy a more complex Machine Learning Application. E.g. Image Recognition.
 
 ### Demo 
 
