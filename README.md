@@ -126,8 +126,8 @@ For additional information of how to create an App service click on the links be
 #### 7. Create an Azure DevOps Project and connect to Azure
 The screenshots below show the steps, but if you need to, you can also refer to [the official documentation for more detail](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops#create-an-azure-devops-project-and-connect-to-azure).
 
-##### 7.1. In a browser, go to [dev.azure.com](https://dev.azure.com/). Once you sign in, the browser will display your Azure DevOps
-dashboard.
+##### 7.1. In a browser, go to [dev.azure.com](https://dev.azure.com/).
+Once you sign in, the browser will display your Azure DevOps dashboard.
 
 ##### 7.2. Create a new project and name it
 
@@ -140,10 +140,10 @@ dashboard.
 ![pycharm10](images/8-3-2-new-service-connection.png)
 
 #### 8. Create a Python Pipeline with GitHub Integration
-***Important:*** This project contains an [azure-pipelines.yml](azure-pipelines.yml) already configure, therefore, we will rename it and use it as reference
+***Important:*** This project contains an [azure-pipelines.yml](.devops/pipelines/azure-pipelines.yml) already configure, therefore, we will rename it and use it as reference
 to configure the new pipeline.
 
-##### 8.1. To rename the YAML file run the command bellow in the project directory.
+##### 8.1. To rename the YAML file run the command bellow in the project's root directory.
 ``` bash
     mv azure-pipelines.yml azure-pipelines-old.yml
 ```
