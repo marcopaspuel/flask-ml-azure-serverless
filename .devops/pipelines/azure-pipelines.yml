@@ -3,11 +3,18 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/python
 
 trigger:
-- main
+  branches:
+    include:
+    - main
+  paths:
+    exclude:
+    - README.md
+    - .gitignore
+    - images
 
 variables:
   # Azure Resource Manager connection created during pipeline creation
-  azureServiceConnectionId: 'eeffe0a0-7f53-48fc-8efa-805d4493bfbf'
+  azureServiceConnectionId: 'flask-ml-azure-serverless-sc'
 
   # Web app name
   webAppName: 'flask-ml-service-marco'
